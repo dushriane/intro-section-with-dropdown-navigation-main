@@ -14,6 +14,9 @@
       <div class="logo">
         <img src="./images/logo.svg" alt="Logo">
       </div>
+      <button class="menu-toggle">
+        <img src="./images/icon-menu.svg" alt="Menu Icon" class="menu-icon">
+      </button>
       <div class="navigation">
         <div class="dropdown">
           <a href="#">Features
@@ -46,6 +49,52 @@
       <button class="register">Register</button>
     </div>
   </div>
+
+  <div class="nav-panel">
+    <button class="close-panel">
+      <img src="./images/icon-close-menu.svg" alt="Close" class="close-icon">
+    </button>
+    <div class="nav-panel-content">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+          Features
+          <img src="./images/icon-arrow-down.svg" alt="Arrow" class="dropdown-arrow">
+        </a>
+        <div class="dropdown-content">
+          <a href="#" class="dropdown-item">
+            <img src="./images/icon-todo.svg" alt="Todo"> Todo List
+          </a>
+          <a href="#" class="dropdown-item">
+            <img src="./images/icon-calendar.svg" alt="Calendar"> Calendar
+          </a>
+          <a href="#" class="dropdown-item">
+            <img src="./images/icon-reminders.svg" alt="Reminders"> Reminders
+          </a>
+          <a href="#" class="dropdown-item">
+            <img src="./images/icon-planning.svg" alt="Planning"> Planning
+          </a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">
+          Company
+          <img src="./images/icon-arrow-down.svg" alt="Arrow" class="dropdown-arrow">
+        </a>
+        <div class="dropdown-content">
+          <a href="#">History</a>
+          <a href="#">Our Team</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <a href="#">Careers</a>
+      <a href="#">About</a>
+      <div class="auth-buttons">
+        <button class="login">Login</button>
+        <button class="register">Register</button>
+      </div>
+    </div>
+  </div>
+
     <div class="hero">
       <div class ="hero-content">
         <h1>Make<br> remote work</h1>
@@ -67,5 +116,27 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Ariane Dushime</a>.
   </div>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navPanel = document.querySelector('.nav-panel');
+    const closePanel = document.querySelector('.close-panel');
+
+    menuToggle.addEventListener('click', () => {
+      navPanel.style.display = 'flex';
+    });
+
+    closePanel.addEventListener('click', () => {
+      navPanel.style.display = 'none';
+    });
+    // Dropdown toggle for nav-panel (mobile)
+    document.querySelectorAll('.nav-panel .dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const content = this.nextElementSibling;
+        const parent = this.closest('.dropdown');
+    parent.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
