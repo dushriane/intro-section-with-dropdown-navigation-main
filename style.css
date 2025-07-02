@@ -3,6 +3,9 @@
   --medium-gray: hsl(0, 0%, 41%);
   --almost-black: hsl(0, 0%, 8%);
 }
+* {
+    box-sizing: border-box;
+}
 /* Mobile styles (320px and up) */
 body {
   margin: 0;
@@ -10,7 +13,7 @@ body {
   color: var(--almost-black);
   line-height: 1.5;
   background: var(--almost-white);
-  max-width: 340px;
+  width: 100%;
 }
 .top-bar {
   display: flex;
@@ -172,20 +175,26 @@ body {
 .hero h1 {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 0px;
+  margin: 0px;
+  margin-block-start: 0;
+  margin-block-end: 0
 }
 
 .hero p {
   font-size: 14px;
   color: var(--medium-gray);
-  margin-bottom: 0px;
+  margin: 0;
   padding: 0 10px 0 10px;
 }
 .hero-image-mobile {
-  display: block;
   width: 100%;
   max-width: 375px;
   margin: 0 auto;
+  height: 350px;
+}
+.hero-image-mobile > picture > img, source{
+  width: 100%;
+  height: 100%;
 }
 .hero-content-title {
   display: none;
@@ -195,11 +204,14 @@ body {
   color: var(--almost-white);
   border: none;
   border-radius: 10px;
-  padding: 12px 28px;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
-  margin-top: 20px;
+  font-weight: 700;
+  width: 110px;
+  align-self: center
+  /* margin-top: 20px; */
 }
 .learn-more:hover {
   background: var(--almost-white);
@@ -211,8 +223,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 24px;
-  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .client-image img {
@@ -221,17 +232,15 @@ body {
 }
 
 .hero-image img {
-  display: none;
+  display: none; 
 }
 .hero-content {
   text-align: center;
-  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px 5px;
 }
-/* Attribution styles */
-.attribution {
-  display: none;
-}
-
 
 /* Tablet styles (768px and up) */
 @media (min-width: 768px) {
@@ -311,6 +320,7 @@ body {
     background: var(--almost-black);
     color: var(--almost-white);
     border: none;
+    /* margin-bottom: 20px */
   }
   .learn-more:hover {
     background: var(--almost-white);
@@ -342,7 +352,7 @@ body {
   }
   .client-image {
     justify-content: flex-start;
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
   
 }

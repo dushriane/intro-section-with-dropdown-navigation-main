@@ -97,7 +97,10 @@
 
     <div class="hero">
       <div class="hero-image-mobile">
-        <img src="./images/image-hero-mobile.png" alt="Hero Image" class="hero-image-mobile">
+        <picture>
+          <source media="(max-width: 768px)" srcset="./images/image-hero-desktop.png">
+          <img src="./images/image-hero-mobile.png" alt="Hero Image" class="hero-image">
+        </picture>
       </div>
       <div class="hero-content">
         <h1>Make remote work</h1>
@@ -114,11 +117,6 @@
         <img src="./images/image-hero-desktop.png" alt="Hero Image" class="hero-image">
       </div>
     </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Ariane Dushime</a>.
-  </div>
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const navPanel = document.querySelector('.nav-panel');
